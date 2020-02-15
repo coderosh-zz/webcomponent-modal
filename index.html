@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Component</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 2rem;
+        font-family: sans-serif;
+      }
+    </style>
+
+    <script src="./modal.js"></script>
+  </head>
+  <body>
+    <mo-dal>
+      <h1 slot="title">Please Confirm</h1>
+      <p>Are you sure you want to go there</p>
+    </mo-dal>
+
+    <p>Please confirm your choice</p>
+    <button>Show details and confirm</button>
+
+    <script>
+      const confirmButton = document.querySelector('button')
+      const modal = document.querySelector('mo-dal')
+
+      modal.addEventListener('confirm', () => {
+        console.log('Modal Opened: ', modal.isOpen)
+        console.log('Confirmed')
+      })
+
+      modal.addEventListener('cancel', () => {
+        console.log('Modal Opened: ', modal.isOpen)
+        console.log('Cancelled')
+      })
+
+      confirmButton.addEventListener('click', () => {
+        // modal.setAttribute('opened', '')
+
+        modal.open()
+        console.log('Modal Opened: ', modal.isOpen)
+      })
+    </script>
+  </body>
+</html>
