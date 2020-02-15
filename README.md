@@ -51,7 +51,7 @@ modal.addEventListener('confirm', () => {
 })
 ```
 
-- Cancelled Event
+- Cancel Event
 
 ```js
 const modal = document.querySelector('mo-dal')
